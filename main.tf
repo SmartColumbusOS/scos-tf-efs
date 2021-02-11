@@ -3,10 +3,10 @@ resource "aws_efs_file_system" "this" {
   creation_token = "${var.environment}-${var.efs_name}-token"
 
   # Performance_mode:  generalPurpose, maxIO
-  performance_mode = "${var.efs_mode}"
-  encrypted        = "${var.efs_encrypted}"
+  performance_mode = var.efs_mode
+  encrypted        = var.efs_encrypted
 
-  tags {
+  tags = {
     Name = "${var.environment}-${var.efs_name}"
   }
 
@@ -14,3 +14,4 @@ resource "aws_efs_file_system" "this" {
     prevent_destroy = "true"
   }
 }
+

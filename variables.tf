@@ -1,7 +1,7 @@
 # ------------- EFS -----------------------------
 variable "region" {
   description = "AWS region"
-  default = "us-east-2"
+  default     = "us-east-2"
 }
 
 variable "efs_name" {
@@ -14,9 +14,10 @@ variable "efs_mode" {
 
 variable "efs_encrypted" {
   description = "Is EFS encrypted?  true/false"
-  type = "string"
+  type        = string
 }
 
 variable "environment" {
   description = "name of the environment the efs is being deployed to"
 }
+
